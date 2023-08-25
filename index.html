@@ -5,8 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="assets/style.css" />
   <title>Libs of Congress</title>
 </head>
@@ -21,9 +19,22 @@
           <button type="submit" class="btn">Get Stuff</button>
         </form>
         <!-- drop down list -->
-        <select name="categories" id="search-criteria"></select>
+        <select name="categories" id="search-criteria">
+            <option data-format="audio">Audio</option>
+            <option data-format="books">Books</option>
+            <option data-format="film-and-videos">Video</option>
+            <option data-format="legislation">Legislation</option>
+            <option data-format="manuscripts">Manuscripts</option>
+            <option data-format="maps">Maps</option>
+            <option data-format="newspapers">Newspapers</option>
+            <option data-format="photos">Photos</option>
+            <option data-format="notated-music">Sheet Music</option>
+            <option data-format="web-archives">Web Archives</option>
+        </select>
     </div>
     <!-- div for displaying results-->
     <div id="material"></div> 
+    <script src="assets/script.js"></script>
+    <script src="assets/script2.js"></script>
 </body>
 </html>
