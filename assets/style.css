@@ -1,0 +1,62 @@
+
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background-color: darkslategray;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.card {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.card-header {
+  font-size: 2.5rem;
+  background-color: beige;
+  text-align: center;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 99%;
+  padding: auto 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.btn {
+  background-color: slategray;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: background-color 0.9s ease;
+}
+
+.btn:hover {
+  background-color: lightblue;
+}
+
+
