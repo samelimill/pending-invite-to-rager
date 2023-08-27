@@ -1,29 +1,51 @@
 
-var inputEl = document.querySelector('#search-criteria');
+var searchBar = document.querySelector('#search-criteria');
 var searchBtn = document.querySelector('.btn');
+
+var dropDown = document.getElementById('search-format'); 
 
 searchBtn.addEventListener('click', function (e) {
     e.preventDefault();
-    var input = inputEl.value;
+    var search = searchBar.value;
+    var category = dropDown.options[dropDown.selectedIndex].getAttribute('data-format');
+    
+    if(category) {
+        getFilteredResults(search, category);
+    } else {
+        getResults(search);
+    }
 
-    getResults();
 });
 
-
-function getResults() {
-    var apiUrl = 'https:www.loc.gov/search/?q=' + input + '&fo=json';
-
+function getResults(search) {
+    var apiUrl = 'https://www.loc.gov/search/?q=' + search + '&fo=json&at=results'; 
+    
     fetch(apiUrl)
     .then(function (response) {
-        console.log(response);
+        return response.json();
     })
     .then(function (data) {
         console.log(data);
+        console.log(apiUrl);
     })
-    .catch(function (error) {
-      alert('Unable to connect to Library of Congress');
-    });
 
 }
+
+function getFilteredResults(search, category) {
+    var apiUrl = 'https://www.loc.gov/' + category + '?q=' + search + '&fo=json&at=results';
+
+    fetch(apiUrl)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        console.log(apiUrl);
+    })
+
+}
+
+
+
 
 
